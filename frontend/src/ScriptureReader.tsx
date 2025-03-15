@@ -1,6 +1,5 @@
 "use client";
 import styled from "styled-components";
-import { StatusBar } from "./components/StatusBar";
 import { NavigationHeader } from "./components/NavigationHeader";
 import { ScriptureContent } from "./components/ScriptureContent";
 import { BottomNavigation } from "./components/BottomNavigation";
@@ -13,7 +12,6 @@ const ScriptureReader = () => {
         rel="stylesheet"
       />
       <ScriptureContainer>
-        <StatusBar />
         <NavigationHeader />
         <ScriptureContent />
         <BottomNavigation />
