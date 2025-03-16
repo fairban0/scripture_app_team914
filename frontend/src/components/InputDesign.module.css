@@ -1,0 +1,245 @@
+.div {
+  min-height: screen;
+  background-color: #fff;
+  flex-direction: column;
+  display: flex;
+  scroll-behavior: smooth;
+}
+.div2 {
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 80px; /* Add padding to account for the fixed navigation bar */
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.div3 {
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21px 16px 0;
+  display: flex;
+}
+.div4 {
+  color: #000;
+  font-family: SF Pro;
+  font-size: 17px;
+  font-weight: 590;
+  line-height: 22px;
+}
+.div5 {
+  width: 124px;
+  height: 10px;
+}
+.div6 {
+  color: #000;
+  text-align: center;
+  margin-top: 10px;
+  font-family: EB Garamond;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 30px;
+}
+.div7 {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-left: 36px;
+  padding-right: 36px;
+  display: flex;
+}
+.div8 {
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+.div9 {
+  color: #000;
+  margin-top: 40px;
+  padding-left: 44px;
+  padding-right: 44px;
+  font-family: Inclusive Sans;
+  font-size: 40px;
+  font-weight: 400;
+}
+.div10 {
+  padding: 20px;
+}
+
+.div11 {
+  color: #000; /* Black color */
+  font-family: Inclusive Sans;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.div12 {
+  display: flex;
+  gap: 10px; /* Space between the items */
+  align-items: center; /* Aligns text and image vertically in a column */
+  flex-direction: column; /* Stack the items vertically */
+}
+
+.div13 {
+  border-color: #cac4d0;
+  border-bottom-width: 1px;
+  align-items: center;
+  gap: 100px; /* Added space between items */
+  padding-bottom: 12px; /* Bottom padding */
+  display: flex;
+  flex-direction: row; /* Keep items in a row */
+}
+
+.div14 {
+  flex: 1;
+}
+.div15 {
+  color: #000;
+  font-family: Inclusive Sans;
+  font-size: 14px;
+}
+.div16 {
+  color: #49454f;
+  font-family: Inclusive Sans;
+  font-size: 11px;
+}
+.div17 {
+  border-color: #cac4d0;
+  border-bottom-width: 1px;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 6px;
+  display: flex;
+}
+.div18 {
+  flex: 1;
+}
+.div19 {
+  color: #000;
+  font-family: Inclusive Sans;
+  font-size: 14px;
+}
+.div20 {
+  color: #49454f;
+  font-family: Inclusive Sans;
+  font-size: 11px;
+}
+.div21 {
+  flex-direction: column;
+  margin-top: 25px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+}
+.div22 {
+  color: #000;
+  margin-bottom: 32px;
+  font-family: Inclusive Sans;
+  font-size: 20px;
+  font-weight: 400;
+}
+.div23 {
+  background-color: #dfe8ee;
+  border-radius: 10px;
+  padding: 12px;
+}
+.div24 {
+  color: #000;
+  margin-bottom: 2px;
+  font-family:
+    Inclusive Sans,
+    sans-serif;
+  font-size: 13px;
+}
+.div25 {
+  color: #49454f;
+  font-family: Inclusive Sans;
+  font-size: 13px;
+}
+.div26 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0; /* Ensure it stretches from the left */
+  right: 0; /* Ensure it stretches to the right */
+}
+
+.div27 {
+  background-color: #5d8aa8;
+  padding: 10px 8px;
+  width: 100%; /* Make sure it fills the entire width */
+}
+
+.div28 {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.navContainer {
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+.div29 {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+.div30 {
+  color: #fffefe;
+  margin-top: 5px;
+  font-family: Inclusive Sans;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.div31 {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+.div32 {
+  color: #fff;
+  margin-top: 5px;
+  font-family: Inclusive Sans;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.div33 {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+.div34 {
+  color: #fff;
+  margin-top: 5px;
+  font-family: Inclusive Sans;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.div35 {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+.div36 {
+  color: #fff;
+  margin-top: 5px;
+  font-family: Inclusive Sans;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.scriptureItem {
+  display: flex;
+  flex-direction: column; /* Ensure image and text stack vertically */
+  align-items: center; /* Align the image and text in the center */
+  gap: 5px; /* Space between image and text */
+}
+
+.verseText {
+  color: #000;
+  font-family: Inclusive Sans;
+}

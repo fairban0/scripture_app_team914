@@ -1,0 +1,17 @@
+/* Add global smooth scrolling for all elements */
+html {
+  scroll-behavior: smooth;
+}
+
+/* For Safari and other browsers that don't support smooth scrolling natively */
+@supports not (scroll-behavior: smooth) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  color: #000 !important; /* Override body color to black */
+  font-family: "Inclusive Sans", sans-serif;
+}
