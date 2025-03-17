@@ -1,0 +1,398 @@
+/* Mobile-first approach */
+.login-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 480px;
+  width: 100%;
+  padding-bottom: 120px;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.status-bar {
+  align-self: stretch;
+  min-height: 53px;
+  width: 100%;
+  padding-top: 21px;
+}
+
+.status-bar-frame {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.time {
+  align-self: stretch;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 16px;
+  padding-right: 6px;
+  font-family:
+    "SF Pro",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  font-size: 17px;
+  color: #000000;
+  text-align: center;
+  line-height: 1;
+  flex: 1;
+}
+
+.dynamic-island-spacer {
+  align-self: stretch;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 124px;
+  flex-shrink: 0;
+  height: 10px;
+}
+
+.levels {
+  align-self: stretch;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 6px;
+  padding-right: 16px;
+  align-items: center;
+  gap: 7px;
+  justify-content: center;
+  flex: 1;
+}
+
+.signal-icon {
+  aspect-ratio: 1.58;
+  object-fit: contain;
+  object-position: center;
+  width: 19px;
+  align-self: stretch;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-shrink: 0;
+}
+
+.battery-icon {
+  aspect-ratio: 1.42;
+  object-fit: contain;
+  object-position: center;
+  width: 17px;
+  align-self: stretch;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-shrink: 0;
+}
+
+.welcome-message {
+  color: #000000;
+  font-size: 24px;
+  font-family:
+    "Inclusive Sans",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 107px;
+}
+
+.welcome-message h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.login-component {
+  position: relative;
+  margin-top: 67px;
+  width: 100%;
+  max-width: 320px;
+  padding: 22px 23px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.login-form {
+  border-radius: 8px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  position: relative;
+  width: 100%;
+  padding: 24px;
+  font-size: 16px;
+  background-color: #ffffff;
+}
+
+.input-field {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.input-field:last-of-type {
+  margin-bottom: 24px;
+}
+
+.input-label {
+  display: block;
+  color: #1e1e1e;
+  font-family:
+    "Inclusive Sans",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  padding: 12px 16px;
+  font-family:
+    "Inter",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  color: #000000;
+  line-height: 1;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.input::placeholder {
+  color: #b3b3b3;
+}
+
+.input-error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 4px;
+  font-family:
+    "Inter",
+    -apple-system,
+    system-ui,
+    sans-serif;
+}
+
+.login-error {
+  color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 16px;
+  font-family:
+    "Inclusive Sans",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  margin-bottom: 24px;
+}
+
+.sign-in-button {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(93, 138, 168, 1);
+  background-color: rgba(93, 138, 168, 1);
+  color: #f5f5f5;
+  padding: 12px;
+  font-family:
+    "Inclusive Sans",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.sign-in-button:hover {
+  background-color: rgba(73, 118, 148, 1);
+  border-color: rgba(73, 118, 148, 1);
+}
+
+.sign-in-button:disabled {
+  background-color: #cccccc;
+  border-color: #bbbbbb;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.forgot-password {
+  width: 100%;
+  font-family:
+    "Inclusive Sans",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  color: #1e1e1e;
+  text-align: left;
+}
+
+.forgot-password a {
+  color: #1e1e1e;
+  text-decoration: underline;
+}
+
+.signup-section {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.signup-text {
+  font-family:
+    "Inclusive Sans",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  color: #1e1e1e;
+  margin-bottom: 10px;
+}
+
+.signup-link {
+  font-family:
+    "Inclusive Sans",
+    -apple-system,
+    system-ui,
+    sans-serif;
+  color: #1e1e1e;
+  text-decoration: underline;
+  text-underline-offset: auto;
+  display: block;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 0 16px 80px;
+  }
+
+  .welcome-message {
+    margin-top: 60px;
+  }
+
+  .login-component {
+    margin-top: 40px;
+    padding: 16px;
+  }
+
+  .login-form {
+    padding: 20px;
+  }
+
+  .input {
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .welcome-message h1 {
+    font-size: 20px;
+  }
+
+  .login-form {
+    padding: 16px;
+  }
+
+  .input-field {
+    margin-bottom: 16px;
+  }
+
+  .button-group {
+    margin-bottom: 16px;
+  }
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+  .welcome-message {
+    margin-top: 120px;
+  }
+
+  .welcome-message h1 {
+    font-size: 28px;
+  }
+
+  .login-component {
+    margin-top: 80px;
+  }
+}
+
+/* Handle dark mode */
+@media (prefers-color-scheme: dark) {
+  .login-form {
+    background-color: #1a1a1a;
+    border-color: #333;
+  }
+
+  .input {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #f5f5f5;
+  }
+
+  .input::placeholder {
+    color: #888;
+  }
+
+  .input-error {
+    border-color: #e74c3c;
+  }
+
+  .error-message {
+    color: #ff6b6b;
+  }
+
+  .sign-in-button:disabled {
+    background-color: #444444;
+    border-color: #555555;
+    color: #888888;
+  }
+
+  .input-label,
+  .forgot-password a,
+  .signup-text,
+  .signup-link {
+    color: #f5f5f5;
+  }
+
+  .time {
+    color: #f5f5f5;
+  }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .input,
+  .sign-in-button {
+    min-height: 44px; /* Apple's recommended minimum touch target size */
+  }
+
+  .forgot-password a,
+  .signup-link {
+    padding: 8px 0;
+    display: inline-block;
+  }
+}
