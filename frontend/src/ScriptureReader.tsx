@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import { NavigationHeader } from "./components/NavigationHeader";
 import { ScriptureContent } from "./components/ScriptureContent";
-import { BottomNavigation } from "./components/BottomNavigation";
+import BottomNavigation from "./components/BottomNavigation";
 
 const ScriptureReader = () => {
   return (
