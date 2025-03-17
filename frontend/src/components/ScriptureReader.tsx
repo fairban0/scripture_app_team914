@@ -1,8 +1,8 @@
 "use client";
 import styled from "styled-components";
-import { NavigationHeader } from "./components/NavigationHeader";
-import { ScriptureContent } from "./components/ScriptureContent";
-import BottomNavigation from "./components/BottomNavigation";
+import { NavigationHeader } from "./NavigationHeader";
+import { ScriptureContent } from "./ScriptureContent";
+import BottomNavigation from "./BottomNavigation";
 
 const ScriptureReader = () => {
   return (
@@ -30,4 +30,3 @@ const ScriptureContainer = styled.div`
 `;
 
 export default ScriptureReader;
-
