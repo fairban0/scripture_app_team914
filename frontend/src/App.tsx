@@ -1,13 +1,14 @@
-import { useState } from "react";
+
 import "./App.css";
 import MyComponent from "./components/InputDesign";
+import SettingScreen from "./components/SettingsScreen"
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
       <MyComponent />
+      < SettingScreen />
     </>
   );
 }
