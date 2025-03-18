@@ -1,30 +1,30 @@
 "use client";
+
 import React from "react";
-import styles from "./InputDesign.module.css";
-import "./global.css"; // Import global CSS for smooth scrolling
-import ProfileSection from "./ProfileSection";
-import WelcomeMessage from "./WelcomeMessage";
-import ContinueReadingSection from "./ContinueReadingSection";
-import VerseOfTheDay from "./VerseOfTheDay";
+import StatusBar from "./StatusBar";
+import NavigationHeader from "./NavigationHeader";
+import SearchBar from "./SearchBar";
+import RecentSearchItem from "./RecentSearchItem";
 import BottomNavigation from "./BottomNavigation";
 
 const InputDesign: React.FC = () => {
-  const verseText =
-    "Therefore, let us go up; let us be strong like unto Moses; for he truly spake unto the waters of the Red Sea and they divided hither and thither, and our fathers came through, out of the captivity, on dry ground, and the armies of Pharaoh did follow and were drowned in the waters of the Red Sea.";
+  const recentSearches = ["Laban", "1 Nephi", "Gold Plates"];
 
   return (
-    <main className={styles.div}>
-      <div className={styles.div2}>
-        <ProfileSection />
-        <WelcomeMessage name="Claire" />
-        <ContinueReadingSection />
-        <VerseOfTheDay
-          verseText={verseText}
-          reference="1 Nephi 4:2"
-          imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/f71a01ba4aa28235b13219ffd64c0fe1caf2d569?placeholderIfAbsent=true"
-        />
+    <main className="flex flex-col w-full bg-white min-h-screen">
+      <StatusBar />
+      <NavigationHeader />
+      <SearchBar />
+
+      <section className="flex flex-col gap-8 px-6 mt-10">
+        {recentSearches.map((search, index) => (
+          <RecentSearchItem key={index} searchText={search} />
+        ))}
+      </section>
+
+      <div className="mt-auto">
+        <BottomNavigation />
       </div>
-      <BottomNavigation />
     </main>
   );
 };

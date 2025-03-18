@@ -1,35 +1,35 @@
-"use client";
-
 import React from "react";
-import HomeIcon from "./icons/HomeIcon";
-import ScripturesIcon from "./icons/ScripturesIcon";
-import SearchIcon from "./icons/SearchIcon";
-import ChatsIcon from "./icons/ChatsIcon";
+import { HomeIcon, BookIcon, SearchIcon, MessageCircleIcon } from "./icons";
 
 const BottomNavigation: React.FC = () => {
+  const navItems = [
+    { name: "Home", icon: <HomeIcon /> },
+    { name: "Scriptures", icon: <BookIcon /> },
+    { name: "Search", icon: <SearchIcon isNav={true} /> },
+    { name: "Chats", icon: <MessageCircleIcon /> },
+  ];
+
   return (
-    <nav className="fixed bottom-0 px-1 w-full bg-slate-500">
-      <div className="flex gap-10 justify-center items-center py-2.5">
-        <NavItem icon={<HomeIcon />} label="Home" />
-        <NavItem icon={<ScripturesIcon />} label="Scriptures" />
-        <NavItem icon={<SearchIcon />} label="Search" />
-        <NavItem icon={<ChatsIcon />} label="Chats" />
+    <nav className="w-full bg-slate-500">
+      <div className="flex gap-10 justify-center items-center px-1.5 py-2.5">
+        {navItems.map((item, index) => (
+          <div key={index} className="text-sm text-center text-white w-[70px]">
+            {item.name}
+          </div>
+        ))}
+      </div>
+      <div className="flex gap-20 justify-center items-center px-9 py-5">
+        {navItems.map((item, index) => (
+          <button
+            key={index}
+            aria-label={item.name}
+            className="focus:outline-none"
+          >
+            {item.icon}
+          </button>
+        ))}
       </div>
     </nav>
-  );
-};
-
-interface NavItemProps {
-  icon: React.ReactNode;
-  label: string;
-}
-
-const NavItem: React.FC<NavItemProps> = ({ icon, label }) => {
-  return (
-    <button className="flex flex-col gap-1.5 items-center">
-      {icon}
-      <span className="text-sm text-white">{label}</span>
-    </button>
   );
 };
 
