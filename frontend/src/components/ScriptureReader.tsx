@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { NavigationHeader } from "./NavigationHeader";
+import  NavigationHeader  from "./NavigationHeader";
 import { ScriptureContent } from "./ScriptureContent";
 import BottomNavigation from "./BottomNavigation";
 
