@@ -13,8 +13,8 @@ const InputDesign: React.FC = () => {
     "Therefore, let us go up; let us be strong like unto Moses; for he truly spake unto the waters of the Red Sea and they divided hither and thither, and our fathers came through, out of the captivity, on dry ground, and the armies of Pharaoh did follow and were drowned in the waters of the Red Sea.";
 
   return (
-    <main className={styles.div}>
-      <div className={styles.div2}>
+    <main className={`${styles.div} min-h-screen flex flex-col`}>
+      <div className={`${styles.div2} flex-grow overflow-auto`}>
         <ProfileSection />
         <WelcomeMessage name="Claire" />
         <ContinueReadingSection />
@@ -24,7 +24,6 @@ const InputDesign: React.FC = () => {
           imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/f71a01ba4aa28235b13219ffd64c0fe1caf2d569?placeholderIfAbsent=true"
         />
       </div>
-      <BottomNavigation />
     </main>
   );
 };
