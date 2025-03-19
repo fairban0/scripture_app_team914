@@ -76,8 +76,6 @@ const SettingsScreen: React.FC = () => {
           </SettingsSection>
         </div>
       </section>
-
-      <BottomNavigation />
     </main>
   );
 };
