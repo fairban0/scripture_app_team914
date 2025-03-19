@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/scripture" element={<ScriptureReader />} />
-            <Route path="/search" element={<Login />} />
+            <Route path="/search" element={<SearchHistoryScreen />} />
             <Route path="/chats" element={<SettingsScreen />} />
           </Routes>
         </div>

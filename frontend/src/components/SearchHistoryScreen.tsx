@@ -26,9 +26,7 @@ const SearchHistoryScreen: React.FC = () => {
           <SearchHistoryItem key={index} text={item.text} />
         ))}
       </section>
-      <div className="mt-auto">
-        <BottomNavigation />
-      </div>
+    
     </main>
   );
 };
