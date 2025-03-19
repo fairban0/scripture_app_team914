@@ -4,6 +4,7 @@ import Home from "./components/InputDesign";
 import ScriptureReader from "./components/ScriptureReader";
 import Login from "./components/Login";
 import SettingsScreen from "./components/SettingsScreen";
+import SearchHistoryScreen from "./components/SearchHistoryScreen";
 
 function App() {
   return (

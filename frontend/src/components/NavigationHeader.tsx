@@ -51,3 +51,6 @@ const SubTitle = styled.h2`
   font-size: 14px;
   margin-bottom: 20px;
 `;
+
+
+export default NavigationHeader
