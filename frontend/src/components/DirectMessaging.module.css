@@ -1,0 +1,44 @@
+.directMessaging {
+  background-color: #fff;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.floatingButton {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.iconButton {
+  background-color: #5d8aa8;
+  border-radius: 32px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
