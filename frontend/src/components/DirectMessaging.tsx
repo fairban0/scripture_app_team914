@@ -6,6 +6,7 @@ import styles from "./DirectMessaging.module.css";
 import { SearchBar } from "./SearchBarMessage";
 import { ConversationList } from "./ConversationList";
 import { NavigationBar } from "./NavigationBar";
+import NavigationHeader from "./NavigationHeader";
 
 const DirectMessaging: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const DirectMessaging: React.FC = () => {
       {/*} <StatusBar />*/}
       <section className={styles.content}>
         {/*  <Header /> */}
+        <NavigationHeader />
         <SearchBar />
         <ConversationList />
         <button className={styles.floatingButton}>
