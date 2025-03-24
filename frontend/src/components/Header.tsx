@@ -7,6 +7,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
+
   return (
     <nav className="flex justify-between items-center w-full">
       <div className="flex gap-6 items-center">
