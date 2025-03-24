@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import StatusBar from "./StatusBar";
 import Header from "./Header";
 import SettingsSection from "./SettingsSection";
 import SettingItem from "./SettingItem";
@@ -11,8 +10,6 @@ import ToggleSwitch from "./ToggleSwitch";
 const SettingsScreen: React.FC = () => {
   return (
     <main className="flex flex-col w-full bg-white min-h-screen">
-      <StatusBar />
-
       <section className="flex flex-col gap-8 px-6 mt-5">
         <Header title="Settings" />
 

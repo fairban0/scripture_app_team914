@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./InputDesign.module.css";
 
 const ProfileSection: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate(); // Initialize navigation
+
+  // Function to handle logout button click
+  const handleLogoutClick = () => {
+    setIsModalOpen(true); // Show custom modal for confirmation
+  };
+
+  // Function to confirm logout
+  const handleLogoutConfirm = () => {
+    // Perform logout actions
+    localStorage.clear(); // Clear any stored user info (if needed)
+    navigate("/login"); // Redirect to Login page
+  };
+
+  // Function to cancel logout
+  const handleLogoutCancel = () => {
+    setIsModalOpen(false); // Close modal without logging out
+  };
+
+  // Function to navigate to settings
+  const goToSettings = () => {
+    navigate("/settings"); // Redirect to Settings page
+  };
+
   return (
     <section className={styles.div7}>
       <img
@@ -15,7 +41,8 @@ const ProfileSection: React.FC = () => {
         }}
       />
       <div className={styles.div8}>
-        <button>
+        {/* Logout button */}
+        <button onClick={handleLogoutClick}>
           <div
             dangerouslySetInnerHTML={{
               __html:
@@ -23,7 +50,9 @@ const ProfileSection: React.FC = () => {
             }}
           />
         </button>
-        <button>
+
+        {/* Hamburger button - Navigates to Settings */}
+        <button onClick={goToSettings}>
           <div
             dangerouslySetInnerHTML={{
               __html:
@@ -32,6 +61,31 @@ const ProfileSection: React.FC = () => {
           />
         </button>
       </div>
+
+      {/* Custom Modal for Logout Confirmation */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-4 rounded-lg shadow-lg w-80">
+            <h2 className="text-lg font-semibold mb-3">
+              Are you sure you want to sign out?
+            </h2>
+            <div className="flex justify-between">
+              <button
+                className="bg-red-500 text-white px-4 py-2 rounded"
+                onClick={handleLogoutConfirm}
+              >
+                Yes, Sign Out
+              </button>
+              <button
+                className="bg-gray-500 text-white px-4 py-2 rounded"
+                onClick={handleLogoutCancel}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
