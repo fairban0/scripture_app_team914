@@ -52,14 +52,6 @@ const SettingsScreen: React.FC = () => {
                 />            
               </div>
           </SettingsSection>
-
-          {/* Additional Info Section */}
-          <SettingsSection title="ADDITIONAL INFO">
-            <div className="flex flex-col rounded-xl bg-zinc-200">
-              <SettingItem label="Downloaded Media" hasBorder showArrow />
-              <SettingItem label="Audio Settings" showArrow   onClick={() => navigate("/audio-settings")} />
-            </div>
-          </SettingsSection>
         </div>
       </section>
 
