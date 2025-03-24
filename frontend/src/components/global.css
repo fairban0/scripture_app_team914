@@ -1,9 +1,9 @@
-/* Add global smooth scrolling for all elements */
+/* General Settings */
 html {
   scroll-behavior: smooth;
 }
 
-/* For Safari and other browsers that don't support smooth scrolling natively */
+/* For Safari and non-supporting browsers */
 @supports not (scroll-behavior: smooth) {
   html,
   body {
@@ -12,6 +12,300 @@ html {
 }
 
 body {
-  color: #000 !important; /* Override body color to black */
+  color: #000 !important; /* Override body color */
   font-family: "Inclusive Sans", sans-serif;
+}
+
+/* ----------------------------------- */
+/* 📌 Bottom Navigation Styling */
+/* ----------------------------------- */
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #475569; /* Slate-500 */
+  z-index: 50;
+  padding: 10px 0;
+}
+
+.navbar .navContainer {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Navigation Item */
+.navItem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Button Styling */
+.navButton {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  color: #d1d5db; /* Gray-300 */
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.navButton:hover,
+.navButton.active {
+  color: white;
+}
+
+/* Icon Styling */
+.iconContainer {
+  padding: 10px;
+  background-color: #1e293b; /* Slate-900 */
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.iconContainer:hover {
+  background-color: #475569;
+}
+
+/* ----------------------------------- */
+/* 📌 Continue Reading Section */
+/* ----------------------------------- */
+
+.continueReading {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1200px; /* Increased width */
+  width: 90%; /* Makes it nearly full width */
+}
+
+/* Title */
+.continueReadingTitle {
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  margin-bottom: 16px;
+  margin-top: -10px;
+}
+
+/* Container */
+.continueReadingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* ----------------------------------- */
+/* 📌 Scripture Item */
+/* ----------------------------------- */
+
+.scriptureItem {
+  width: 100%;
+  max-width: 1000px; /* Increased width */
+  background-color: white;
+  display: flex;
+  align-items: center; /* Aligns image, text, and button horizontally */
+  justify-content: space-between;
+  border-bottom: 2px solid #475569;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* Remove underline from last item */
+.scriptureItem:last-child {
+  border-bottom: none;
+}
+
+/* Image Column */
+.scriptureImageContainer {
+  flex-shrink: 0; /* Prevents image from shrinking */
+  margin-bottom: 5px;
+}
+
+.scriptureImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+/* Text Column */
+.scriptureTextContainer {
+  flex-grow: 1; /* Allows it to take up remaining space */
+  margin-left: 15px; /* Adds space between image and text */
+  display: flex;
+  flex-direction: column; /* Stacks title and book */
+}
+
+/* Scripture Title */
+.scriptureTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.2;
+  margin-top: -8px;
+}
+
+/* Scripture Book */
+.scriptureBook {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.2;
+  margin-top: -10px;
+}
+
+/* Button Column */
+.readButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevents it from shrinking */
+  transition: transform 0.2s ease;
+}
+
+/* Hover Effect */
+.readButton:hover {
+  transform: scale(1.2);
+}
+
+/* ----------------------------------- */
+/* 📌 Profile Section */
+/* ----------------------------------- */
+
+.profileSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Profile Image */
+.profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #475569;
+}
+
+/* Welcome Message */
+.welcomeMessage {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-left: 15px;
+}
+
+/* Button Container */
+.profileButtons {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  padding-right: 10px;
+}
+
+/* Profile Buttons */
+.profileButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+  margin-right: 20px;
+}
+
+.profileButton:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* ----------------------------------- */
+/* 📌 Verse of the Day */
+/* ----------------------------------- */
+
+.verseContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.verseTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.verseCard {
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.verseImage {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.verseTextContainer {
+  padding: 16px;
+}
+
+.verseText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.verseReference {
+  font-size: 14px;
+  font-weight: bold;
+  color: #5d8aa8;
+  margin-top: 8px;
+}
+
+/* Share Button */
+.shareButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.shareButton svg path {
+  stroke: #4a90e2;
+  transition: stroke 0.3s ease;
+}
+
+.shareButton:hover svg path {
+  stroke: #2a5a9e;
 }
