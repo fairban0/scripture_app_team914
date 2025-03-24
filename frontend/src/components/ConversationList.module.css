@@ -1,0 +1,7 @@
+.conversationList {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 21px 20px;
+  width: 100%;
+}
