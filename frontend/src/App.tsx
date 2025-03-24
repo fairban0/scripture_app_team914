@@ -4,6 +4,7 @@ import Home from "./components/InputDesign";
 import ScriptureReader from "./components/ScriptureReader";
 import Login from "./components/Login";
 import SettingsScreen from "./components/SettingsScreen";
+import DirectMessaging from "./components/DirectMessaging";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/scripture" element={<ScriptureReader />} />
-            <Route path="/search" element={<Login />} />
-            <Route path="/chats" element={<SettingsScreen />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/chats" element={<DirectMessaging />} />
+            <Route path="/settings" element={<SettingsScreen />} />
           </Routes>
         </div>
 

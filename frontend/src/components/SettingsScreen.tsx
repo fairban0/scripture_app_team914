@@ -7,11 +7,12 @@ import SettingsSection from "./SettingsSection";
 import SettingItem from "./SettingItem";
 import BottomNavigation from "./BottomNavigation";
 import ToggleSwitch from "./ToggleSwitch";
+import NavigationHeader from "./NavigationHeader";
 
 const SettingsScreen: React.FC = () => {
   return (
     <main className="flex flex-col w-full bg-white min-h-screen">
-      <StatusBar />
+      <NavigationHeader />
 
       <section className="flex flex-col gap-8 px-6 mt-5">
         <Header title="Settings" />

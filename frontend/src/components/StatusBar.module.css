@@ -1,0 +1,61 @@
+.statusBar {
+  background-color: #fff;
+  width: 100%;
+  min-height: 50px;
+  padding-top: 21px;
+}
+
+.frame {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.time {
+  color: #000;
+  text-align: center;
+  flex: 1;
+  align-self: stretch;
+  margin: auto;
+  padding: 0 16px 0 6px;
+  font-family: SF Pro, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 590;
+  line-height: 1;
+}
+
+.spacer {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 124px;
+  height: 10px;
+  margin: auto;
+}
+
+.levels {
+  flex: 1;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  gap: 7px;
+  margin: auto;
+  padding: 0 16px 0 6px;
+  display: flex;
+}
+
+.signalIcon {
+  aspect-ratio: 1.67;
+  object-fit: contain;
+  object-position: center;
+  width: 20px;
+  margin: auto;
+}
+
+.batteryIcon {
+  aspect-ratio: 1.42;
+  object-fit: contain;
+  object-position: center;
+  width: 17px;
+  margin: auto;
+}
