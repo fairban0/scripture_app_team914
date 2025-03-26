@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/scripture" element={<ScriptureReader />} />
-            <Route path="/login" element={<SearchPage />} />
+            <Route path="search" element={<SearchPage />} />
             <Route path="/chats" element={<DirectMessaging />} />
             {/* <Route path="/settings" element={<SettingsScreen />} />
             <Route path="/scripture-search" element={<ScriptureSearch />} />
