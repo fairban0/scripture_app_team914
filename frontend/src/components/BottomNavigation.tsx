@@ -11,9 +11,7 @@ const BottomNavigation: React.FC = () => {
       <div className="navContainer">
         <NavItem icon={<HomeIcon />} label="Home" path="/" />
         <NavItem
-          icon={<ScripturesIcon />}
-          label="Scriptures"
-          path="/scripture"
+          icon={<ScripturesIcon />}label="Scriptures"path="/scripture"
         />
         <NavItem icon={<SearchIcon />} label="Search" path="/search" />
         <NavItem icon={<ChatsIcon />} label="Chats" path="/chats" />
