@@ -5,6 +5,8 @@ import ScriptureReader from "./components/ScriptureReader";
 import Login from "./components/Login";
 import SettingsScreen from "./components/SettingsScreen";
 import DirectMessaging from "./components/DirectMessaging";
+import ScriptureSearch from "./components/ScriptureSearch";
+import MosiahPage from "./components/MosiahPage";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/chats" element={<DirectMessaging />} />
             <Route path="/settings" element={<SettingsScreen />} />
+            <Route path="/scripture-search" element={<ScriptureSearch />} />
+            <Route path="/scripture1" element={<MosiahPage />} />
           </Routes>
         </div>
 

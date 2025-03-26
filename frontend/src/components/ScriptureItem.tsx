@@ -1,17 +1,23 @@
 import React from "react";
 import "./global.css"; // Ensure global styles are applied
+import styles from "./InputDesign.module.css";
+import { useNavigate } from "react-router-dom"; // Import React Router
 
 interface ScriptureItemProps {
   title: string;
   book: string;
   imageUrl: string;
+  path?: string; // Allow passing a navigation path
 }
 
 const ScriptureItem: React.FC<ScriptureItemProps> = ({
   title,
   book,
   imageUrl,
+  path = "/scripture", // Default path if not provided
 }) => {
+  const navigate = useNavigate(); // Initialize navigation
+
   return (
     <article className="scriptureItem">
       {/* Image Column */}
@@ -26,7 +32,7 @@ const ScriptureItem: React.FC<ScriptureItemProps> = ({
       </div>
 
       {/* Button Column */}
-      <button className="readButton">
+      <button onClick={() => navigate(path)} className="readButton">
         <div
           dangerouslySetInnerHTML={{
             __html:
