@@ -5,7 +5,7 @@ import styles from "./DirectMessaging.module.css";
 //import { Header } from "./Header";
 import { SearchBar } from "./SearchBarMessage";
 import { ConversationList } from "./ConversationList";
-import { NavigationBar } from "./NavigationBar";
+// import { NavigationBar } from "./NavigationBar";
 import NavigationHeader from "./NavigationHeader";
 
 const DirectMessaging: React.FC = () => {
@@ -27,7 +27,7 @@ const DirectMessaging: React.FC = () => {
           </div>
         </button>
       </section>
-      <NavigationBar />
+  
     </main>
   );
 };

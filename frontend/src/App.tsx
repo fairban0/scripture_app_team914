@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BottomNavigation from "./components/BottomNavigation";
 import Home from "./components/InputDesign";
 import ScriptureReader from "./components/ScriptureReader";
-import Login from "./components/Login";
-import SettingsScreen from "./components/SettingsScreen";
+// import Login from "./components/Login";
+// import SettingsScreen from "./components/SettingsScreen";
 import DirectMessaging from "./components/DirectMessaging";
-import ScriptureSearch from "./components/ScriptureSearch";
-import MosiahPage from "./components/MosiahPage";
+// import ScriptureSearch from "./components/ScriptureSearch";
+// import MosiahPage from "./components/MosiahPage";
 import SearchPage from "./components/SearchPage"
 
 function App() {

@@ -28,18 +28,7 @@ const verseText = "Be strong like unto Moses...";
           imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/f71a01ba4aa28235b13219ffd64c0fe1caf2d569?placeholderIfAbsent=true"
         />
 
-        <NavigationHeader />
-        <SearchBar />
-
-        <section className="flex flex-col gap-8 px-6 mt-10">
-          {recentSearches.map((search, index) => (
-            <RecentSearchItem key={index} searchText={search} />
-          ))}
-        </section>
-      </div>
-
-      <div className="mt-auto">
-        <BottomNavigation />
+        
       </div>
     </main>
   );

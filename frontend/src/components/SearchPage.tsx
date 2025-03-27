@@ -1,22 +1,27 @@
 "use client";
 
 import React from "react";
+import styles from "./DirectMessaging.module.css";
+
+// Components
 import NavigationHeader from "./NavigationHeader";
 import SearchBar from "./SearchBar";
+
 import RecentSearchItem from "./RecentSearchItem";
-import BottomNavigation from "./BottomNavigation";
 
-import styles from "./InputDesign.module.css";
 
+// Uncomment when needed
+// import { StatusBar } from "./StatusBar";
+// import { Header } from "./Header";
 
 const SearchPage: React.FC = () => {
   const recentSearches = ["Laban", "1 Nephi", "Gold Plates"];
-  
 
   return (
-    <main className={`${styles.div} min-h-screen flex flex-col`}>
-      <div className={`${styles.div2} flex-grow overflow-auto`}>
-        
+    <main className={styles.directMessaging}>
+      {/* <StatusBar /> */}
+      <section className={styles.content}>
+        {/* <Header /> */}
         <NavigationHeader />
         <SearchBar />
 
@@ -25,13 +30,15 @@ const SearchPage: React.FC = () => {
             <RecentSearchItem key={index} searchText={search} />
           ))}
         </section>
-      </div>
+      </section>
 
       <div className="mt-auto">
-        <BottomNavigation />
+        
+        
       </div>
     </main>
   );
 };
 
 export default SearchPage;
+
