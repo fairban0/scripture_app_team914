@@ -1,4 +1,6 @@
 import styled from "styled-components";
+// import { useState, useRef, useEffect } from "react";
+import CommentBox from "./CommentBox";
 
 export const ScriptureContent = () => {
   return (
@@ -9,6 +11,7 @@ export const ScriptureContent = () => {
         brass by stratagem -- Zoram chooses to join Lehi's family in the
         wilderness. About 600-592 B.C.
       </ChapterSummary>
+      <CommentBox />
       <VersesContainer>
         <Verse>
           <VerseNumber>1</VerseNumber>

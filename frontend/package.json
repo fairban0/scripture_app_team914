@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^1.8.4",
     "lucide-react": "^0.483.0",
+=======
+    "framer-motion": "^12.5.0",
+>>>>>>> bensbranch
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
