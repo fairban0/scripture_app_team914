@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./InputDesign.module.css";
 import ScriptureItem from "./ScriptureItem";
+import "./global.css"; // Ensure global styles are imported
 
 const ContinueReadingSection: React.FC = () => {
   return (
-    <section className={styles.div10}>
-      <h2 className={styles.div11}>Continue Reading</h2>
-      <div className={styles.div12}>
+    <section className="continueReading">
+      <h2 className="continueReadingTitle">Continue Reading</h2>
+      <div className="continueReadingContainer">
         <ScriptureItem
           title="1 Nephi 4"
           book="Book of Mormon"

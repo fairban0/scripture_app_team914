@@ -1,0 +1,59 @@
+.conversation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.avatar {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  width: 56px;
+}
+
+.messageContent {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.name {
+  color: #000;
+  font-family: Inclusive Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  -webkit-text-stroke: 0.25px #000;
+}
+
+.message {
+  color: #000;
+  font-family: Inclusive Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.date {
+  color: #000;
+  font-family: Inclusive Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.notification {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/a5de014e059eed4f58ec993b6ec61c0cbc38318c?placeholderIfAbsent=true&apiKey=3258114e603f4c4b93159cc5a3da17fc");
+  background-size: contain;
+  top: 8px;
+  left: 149px;
+}
