@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { login, LoginResponse, ApiError } from "../services/api";
+import { LoginResponse, ApiError } from "../services/api";
+import { login } from "../types/login";
 import "./Login.css";
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [emailError, setEmailError] = useState("");
+  const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState("");
   const [touched, setTouched] = useState({
-    email: false,
+    username: false,
     password: false,
   });
 
-  // Validate email format
-  const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  // Validate username requirements
+  const validateUsername = (username: string): boolean => {
+    return username.length > 3;
   };
 
   // Validate password requirements
@@ -26,22 +26,21 @@ const Login: React.FC = () => {
     return password.length >= 6;
   };
 
-  // Check form validity whenever inputs change
   useEffect(() => {
-    const isEmailValid = email.trim() !== "" && validateEmail(email);
+    const isUsernameValid =
+      username.trim() !== "" && validateUsername(username);
     const isPasswordValid =
       password.trim() !== "" && validatePassword(password);
 
-    setIsFormValid(isEmailValid && isPasswordValid);
+    setIsFormValid(isUsernameValid && isPasswordValid);
 
-    // Set error messages only if the field has been touched
-    if (touched.email) {
-      if (email.trim() === "") {
-        setEmailError("Email is required");
-      } else if (!validateEmail(email)) {
-        setEmailError("Please enter a valid email address");
+    if (touched.username) {
+      if (username.trim() === "") {
+        setUsernameError("Username is required");
+      } else if (!validateUsername(username)) {
+        setUsernameError("Username must be at least 4 characters long");
       } else {
-        setEmailError("");
+        setUsernameError("");
       }
     }
 
@@ -54,61 +53,33 @@ const Login: React.FC = () => {
         setPasswordError("");
       }
     }
-  }, [email, password, touched]);
+  }, [username, password, touched]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Mark all fields as touched to show validation errors
-    setTouched({
-      email: true,
-      password: true,
-    });
-
-    // Clear previous login errors
+    setTouched({ username: true, password: true });
     setLoginError("");
 
-    // Only proceed if form is valid
     if (isFormValid) {
       setIsLoading(true);
-
       try {
-        // Call ASP.NET backend API
-        const response = await login({ email, password });
-
-        // Store user info for the auth hook
-        localStorage.setItem("userId", response.userId);
+        // Pass the username and password (lowercase from state)
+        const response: LoginResponse = await login({ username, password });
+        localStorage.setItem("userId", response.userId.toString());
         localStorage.setItem("userName", response.userName);
-
-        // Redirect to dashboard or home page after successful login
-        window.location.href = "/dashboard"; // Or use React Router navigation
+        window.location.href = "/";
       } catch (error) {
-        // Handle API errors
         const apiError = error as ApiError;
-
-        if (apiError.errors) {
-          // Handle validation errors from the backend
-          if (apiError.errors.Email) {
-            setEmailError(apiError.errors.Email[0]);
-          }
-          if (apiError.errors.Password) {
-            setPasswordError(apiError.errors.Password[0]);
-          }
-        } else {
-          // General error message
-          setLoginError(apiError.message || "Login failed. Please try again.");
-        }
+        setLoginError(apiError.message || "Login failed. Please try again.");
       } finally {
         setIsLoading(false);
       }
     }
   };
 
-  const handleBlur = (field: "email" | "password") => {
-    setTouched({
-      ...touched,
-      [field]: true,
-    });
+  const handleBlur = (field: "username" | "password") => {
+    setTouched({ ...touched, [field]: true });
   };
 
   return (
@@ -116,32 +87,30 @@ const Login: React.FC = () => {
       <div className="welcome-message">
         <h1>
           Welcome,
-          <br />
-          Glad to see you!
+          <br /> Glad to see you!
         </h1>
       </div>
 
       <div className="login-component">
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="input-field">
-            <label htmlFor="email" className="input-label">
-              Email
+            <label htmlFor="username" className="input-label">
+              Username
             </label>
             <input
-              id="email"
-              type="email"
-              className={`input ${emailError && touched.email ? "input-error" : ""}`}
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onBlur={() => handleBlur("email")}
-              aria-invalid={!!emailError}
-              aria-describedby={emailError ? "email-error" : undefined}
+              id="username"
+              type="text"
+              className={`input ${usernameError && touched.username ? "input-error" : ""}`}
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              onBlur={() => handleBlur("username")}
+              aria-invalid={!!usernameError}
               required
             />
-            {emailError && touched.email && (
-              <div className="error-message" id="email-error" role="alert">
-                {emailError}
+            {usernameError && touched.username && (
+              <div className="error-message" role="alert">
+                {usernameError}
               </div>
             )}
           </div>
@@ -159,11 +128,10 @@ const Login: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
               onBlur={() => handleBlur("password")}
               aria-invalid={!!passwordError}
-              aria-describedby={passwordError ? "password-error" : undefined}
               required
             />
             {passwordError && touched.password && (
-              <div className="error-message" id="password-error" role="alert">
+              <div className="error-message" role="alert">
                 {passwordError}
               </div>
             )}

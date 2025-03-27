@@ -4,11 +4,11 @@
 import { useState, useEffect } from "react";
 
 // Base URL for the ASP.NET API
-const API_BASE_URL = "https://api.example.com/api"; // Replace with your actual ASP.NET API URL
+const API_BASE_URL = "https://localhost:5000/Login"; // Replace with your actual ASP.NET API URL
 
 // Types
 export interface LoginRequest {
-  email: string;
+  username: string;
   password: string;
 }
 
@@ -27,7 +27,7 @@ export interface ApiError {
 
 // API functions
 export const login = async (
-  credentials: LoginRequest,
+  credentials: LoginRequest
 ): Promise<LoginResponse> => {
   try {
     const response = await fetch(`${API_BASE_URL}/auth/login`, {
@@ -53,7 +53,7 @@ export const login = async (
     localStorage.setItem("authToken", data.token);
     localStorage.setItem(
       "tokenExpiry",
-      (Date.now() + data.expiresIn * 1000).toString(),
+      (Date.now() + data.expiresIn * 1000).toString()
     );
 
     return data;
@@ -73,7 +73,7 @@ export const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [user, setUser] = useState<{ userId: string; userName: string } | null>(
-    null,
+    null
   );
 
   useEffect(() => {
@@ -119,7 +119,7 @@ export const useAuth = () => {
 export const createAuthenticatedRequest = async (
   url: string,
   method: string = "GET",
-  body?: any,
+  body?: any
 ) => {
   const token = localStorage.getItem("authToken");
 
