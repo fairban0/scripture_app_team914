@@ -27,7 +27,6 @@ const DirectMessaging: React.FC = () => {
           </div>
         </button>
       </section>
-      <NavigationBar />
     </main>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ConversationList.module.css";
 import { ConversationItem } from "./ConversationItem";
+import { useNavigate } from "react-router-dom";
 
 const conversations = [
   {
@@ -64,10 +65,24 @@ const conversations = [
 ];
 
 export const ConversationList: React.FC = () => {
+  const navigate = useNavigate(); // Initialize navigate function
+
+  const handleConversationClick = () => {
+    // Navigate to the chat page on click
+    navigate("/chat");
+  };
+
   return (
     <section className={styles.conversationList}>
-      {conversations.map((conversation) => (
-        <ConversationItem key={conversation.id} {...conversation} />
+      {/* Assuming conversations is a list of all the conversations */}
+      {conversations.map((conversation, index) => (
+        <div
+          key={index}
+          className={styles.conversationItem}
+          onClick={handleConversationClick} // Trigger navigation on click
+        >
+          <ConversationItem {...conversation} />
+        </div>
       ))}
     </section>
   );

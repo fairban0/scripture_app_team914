@@ -8,6 +8,7 @@ import SettingsScreen from "./components/SettingsScreen";
 import DirectMessaging from "./components/DirectMessaging";
 import MosiahPage from "./components/MosiahPage";
 import SearchPage from "./components/SearchPage";
+import Chat from "./components/Chat";
 
 function Layout() {
   const location = useLocation();
@@ -36,10 +37,30 @@ function Layout() {
   );
 }
 
+
 function App() {
   return (
     <Router>
       <Layout />
+      {/* Main App Wrapper */}
+      <div className="flex flex-col min-h-screen">
+        {/* Main Page Content */}
+        <div className="flex-grow overflow-auto">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/scripture" element={<ScriptureReader />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/chats" element={<DirectMessaging />} />
+            <Route path="/settings" element={<SettingsScreen />} />
+            <Route path="/scripture-search" element={<ScriptureSearch />} />
+            <Route path="/scripture1" element={<MosiahPage />} />
+            <Route path="/chat" element={<Chat />} />
+          </Routes>
+        </div>
+
+        {/* Bottom Navigation - Always Visible */}
+        <BottomNavigation />
+      </div>
     </Router>
   );
 }
