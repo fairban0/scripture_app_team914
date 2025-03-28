@@ -1,44 +1,52 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import "./CommentBox.css"; // Import the custom CSS file
 
 export default function CommentBox() {
   const [isOpen, setIsOpen] = useState(false);
+  const [comment, setComment] = useState(""); // State to store the comment
+
+  const handleSave = () => {
+    console.log("Saved comment:", comment); // Replace this with your save logic
+    setIsOpen(false); // Close the comment box after saving
+  };
 
   return (
     <div className="relative">
-      <button
-        onClick={() => setIsOpen(true)}
-        className="px-4 py-2 bg-blue-500 text-white rounded absolute bottom-0 right-0 z-10"
-      >
-        Annotate
-      </button>
+      {/* Annotate Button */}
+      <div className="comment-box-button-container">
+        <button onClick={() => setIsOpen(true)} className="comment-box-button">
+          Annotate
+        </button>
+      </div>
 
+      {/* Comment Box Overlay */}
       {isOpen && (
         <motion.div
-          initial={{ y: "100%" }} // Start below the screen
-          animate={{ y: 0 }} // Move to its final position
-          exit={{ y: "100%" }} // Slide out of view
+          initial={{ y: "100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "100%" }}
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
-          className="fixed bottom-0 right-0 w-full h-1/2 bg-white shadow-lg p-4 flex flex-col justify-between z-50 border-t border-gray-300"
+          className="comment-box-overlay"
         >
-          <div className="flex justify-between items-center">
-            <h2 className="text-xl font-bold">Your Comments</h2>
-            <div className="flex gap-2">
-              <button className="px-4 py-2 bg-green-500 text-white rounded">
-                Save
-              </button>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="px-4 py-2 bg-gray-500 text-white rounded"
-              >
-                Close
-              </button>
-            </div>
-          </div>
+          <h2 className="text-xl font-bold mb-4">Your Comments</h2>
           <textarea
-            className="w-full h-full border p-4 text-lg resize-none"
-            placeholder="Type your comment..."
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+            className="comment-box-textarea"
+            placeholder="Type your comment here..."
           />
+          <div className="comment-box-buttons">
+            <button onClick={handleSave} className="comment-box-save-button">
+              Save
+            </button>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="comment-box-close-button"
+            >
+              Close
+            </button>
+          </div>
         </motion.div>
       )}
     </div>
