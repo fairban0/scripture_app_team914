@@ -1,17 +1,16 @@
 "use client";
 import * as React from "react";
-import { UserProfile } from "./UserProfile";
-import { ChatMessages } from "./ChatMessages";
-import { KeyboardLayout } from "./KeyboardLayout";
+import styles from "./Chat.module.css";
+import { ChatHeader } from "./ChatHeader";
+import { MessageList } from "./MessageList";
+import { KeyboardSection } from "./KeyboardSection";
 
-function Chat() {
+export default function Chat() {
   return (
-    <main className="flex overflow-hidden flex-col mx-auto w-full bg-white max-w-[480px]">
-      <UserProfile />
-      <ChatMessages />
-      <KeyboardLayout />
+    <main className={styles.chat}>
+      <ChatHeader />
+      <MessageList />
+      <KeyboardSection />
     </main>
   );
 }
-
-export default Chat;
