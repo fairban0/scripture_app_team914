@@ -7,6 +7,7 @@ import SettingsScreen from "./components/SettingsScreen";
 import DirectMessaging from "./components/DirectMessaging";
 import ScriptureSearch from "./components/ScriptureSearch";
 import MosiahPage from "./components/MosiahPage";
+import Chat from "./components/Chat";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/settings" element={<SettingsScreen />} />
             <Route path="/scripture-search" element={<ScriptureSearch />} />
             <Route path="/scripture1" element={<MosiahPage />} />
+            <Route path="/chat" element={<Chat />} />
           </Routes>
         </div>
 
