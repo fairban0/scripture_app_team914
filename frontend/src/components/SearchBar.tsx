@@ -1,14 +1,14 @@
 "use client";
-
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { SearchIcon } from "./icons";
 
 const SearchBar: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
-
+  const navigate = useNavigate(); 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle search functionality here
+    navigate("/scripture")
     console.log("Searching for:", searchQuery);
   };
 
@@ -40,3 +40,4 @@ const SearchBar: React.FC = () => {
 };
 
 export default SearchBar;
+
