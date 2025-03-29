@@ -4,10 +4,8 @@ import React from "react";
 import Header from "./Header";
 import SettingsSection from "./SettingsSection";
 import SettingItem from "./SettingItem";
-import BottomNavigation from "./BottomNavigation";
 import { useNavigate } from "react-router-dom";
 import ToggleSwitch from "./ToggleSwitch";
-import NavigationHeader from "./NavigationHeader";
 
 const SettingsScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -29,7 +27,6 @@ const SettingsScreen: React.FC = () => {
               />
               <div className="flex flex-col ml-3">
                 <h3 className="text-sm text-black">Claire Smith</h3>
-                <p className="text-xs text-zinc-600">csmith99</p>
               </div>
               <button
                 className="ml-auto bg-blue-500 text-white px-3 py-1 rounded"
@@ -44,15 +41,26 @@ const SettingsScreen: React.FC = () => {
           <SettingsSection title="ADVANCED">
             <div className="flex flex-col rounded-xl bg-zinc-200">
               <SettingItem label="Notifications" hasBorder />
-              <ToggleSwitch enabled={true}/>
-              <SettingItem label="Downloaded Media" hasBorder showArrow />
+              <ToggleSwitch  />
+              <br />
+              <SettingItem label="Audio Settings" hasBorder showArrow onClick={() => navigate("/audio-settings")}/>
+                   
+              <br />
+              <SettingItem label="Enable Offline Browsing" hasBorder/>
+              <ToggleSwitch />
+              <br />
+              <SettingItem label="Privacy Policy" hasBorder showArrow onClick={() => navigate("/privacy-policy")}/>
+
+            </div>
+            <div className="flex flex-col gap-5 pb-25"> {/* Theres a second one because it makes sure nothing gets hidden under the nav bar */}
               <SettingItem
                 label="Audio Settings"
                 hasBorder
                 showArrow
                 onClick={() => navigate("/audio-settings")}
                 />            
-              </div>
+            </div>
+            
           </SettingsSection>
         </div>
       </section>

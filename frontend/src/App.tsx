@@ -8,6 +8,9 @@ import DirectMessaging from "./components/DirectMessaging";
 import MosiahPage from "./components/MosiahPage";
 import SearchPage from "./components/SearchPage";
 import Chat from "./components/Chat";
+import EditProfile from "./components/EditProfile";
+import AudioSettings from "./components/AudioSettings";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 function Layout() {
   const location = useLocation();
@@ -27,6 +30,10 @@ function Layout() {
           <Route path="/scripture1" element={<MosiahPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/edit-profile" element={<EditProfile/>}/>
+          <Route path="/audio-settings" element={<AudioSettings/>}/>
+          <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+
         </Routes>
       </div>
 

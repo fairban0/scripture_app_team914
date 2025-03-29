@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-interface ToggleSwitchProps {
-  enabled: boolean;
-  onChange?: () => void;
-}
+const ToggleSwitch: React.FC = () => {
+  const [enabled, setEnabled] = useState(false);
 
-const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ enabled, onChange }) => {
   return (
     <button
-      onClick={onChange}
+      onClick={() => setEnabled(!enabled)}
       aria-checked={enabled}
       role="switch"
       className="w-[28px] h-[19px]"
