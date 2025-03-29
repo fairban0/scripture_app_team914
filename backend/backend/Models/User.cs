@@ -20,7 +20,7 @@ public class User
     [ForeignKey("settings_id")]
     public int? account_settings {get;set;}
     public Settings? Settings{get;set;}
-
+    public Annotation? Annotation { get; set; }
     
    
 }

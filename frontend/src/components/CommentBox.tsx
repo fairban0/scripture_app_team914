@@ -1,14 +1,36 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import "./CommentBox.css"; // Import the custom CSS file
+import "./CommentBox.css";
 
 export default function CommentBox() {
   const [isOpen, setIsOpen] = useState(false);
-  const [comment, setComment] = useState(""); // State to store the comment
+  const [comment, setComment] = useState("");
+  const [error, setError] = useState(""); // State to handle errors
 
-  const handleSave = () => {
-    console.log("Saved comment:", comment); // Replace this with your save logic
-    setIsOpen(false); // Close the comment box after saving
+  const handleSave = async () => {
+    try {
+      const response = await fetch("https://localhost:5000/Scripture", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: localStorage.getItem("userId"), // Assuming userId is stored in localStorage
+          annotation: comment,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorResponse = await response.json();
+        throw new Error(errorResponse.message || "Failed to save annotation.");
+      }
+
+      console.log("Saved comment:", comment);
+      setComment(""); // Clear the comment box
+      setIsOpen(false); // Close the comment box
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred.");
+    }
   };
 
   return (
@@ -36,6 +58,11 @@ export default function CommentBox() {
             className="comment-box-textarea"
             placeholder="Type your comment here..."
           />
+          {error && (
+            <div className="error-message" role="alert">
+              {error}
+            </div>
+          )}
           <div className="comment-box-buttons">
             <button onClick={handleSave} className="comment-box-save-button">
               Save
