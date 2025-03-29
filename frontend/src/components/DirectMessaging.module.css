@@ -1,21 +1,27 @@
+/* DirectMessaging Container */
 .directMessaging {
   background-color: #fff;
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
-  overflow: hidden;
+  width: 100%; /* Make sure it spans the full width */
+
+  margin: 0; /* Remove margins */
+  padding: 0; /* Ensure no extra padding */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  box-sizing: border-box; /* Include padding and border in width/height */
+  margin-bottom: 100px;
 }
 
+/* Content Section */
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%; /* Ensure content spans the full width */
+  margin: 0; /* Remove any margin */
 }
 
+/* Floating Button */
 .floatingButton {
   position: absolute;
   bottom: 16px;
@@ -26,9 +32,10 @@
   cursor: pointer;
 }
 
+/* Icon Button */
 .iconButton {
   background-color: #5d8aa8;
-  border-radius: 32px;
+  border-radius: 50%; /* Ensure it's circular */
   width: 56px;
   height: 56px;
   display: flex;
@@ -37,6 +44,7 @@
   padding: 12px;
 }
 
+/* Button Icon */
 .buttonIcon {
   width: 20px;
   height: 20px;

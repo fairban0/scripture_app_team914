@@ -21,14 +21,16 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
       <div className={styles.content}>
         <img src={avatar} alt={name} className={styles.avatar} />
         <div className={styles.messageContent}>
-          <h2 className={styles.name}>{name}</h2>
+          <h2 className={styles.name}>
+            {name}
+            {hasNotification && (
+              <div className={styles.notification} aria-label="New message" />
+            )}
+          </h2>
           <p className={styles.message}>{message}</p>
         </div>
       </div>
       <time className={styles.date}>{date}</time>
-      {hasNotification && (
-        <div className={styles.notification} aria-label="New message" />
-      )}
     </article>
   );
 };

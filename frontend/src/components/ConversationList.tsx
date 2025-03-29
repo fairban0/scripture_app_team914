@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
-import styles from "./ConversationList.module.css";
 import { ConversationItem } from "./ConversationItem";
 import { useNavigate } from "react-router-dom";
+import "./global.css";
 
 const conversations = [
   {
@@ -73,15 +74,18 @@ export const ConversationList: React.FC = () => {
   };
 
   return (
-    <section className={styles.conversationList}>
+    <section className="conversationList">
       {/* Assuming conversations is a list of all the conversations */}
       {conversations.map((conversation, index) => (
         <div
           key={index}
-          className={styles.conversationItem}
+          className="conversationItem"
           onClick={handleConversationClick} // Trigger navigation on click
         >
-          <ConversationItem {...conversation} />
+          <ConversationItem
+            {...conversation}
+            hasNotification={index < 2} //Only set for top two
+          />
         </div>
       ))}
     </section>
