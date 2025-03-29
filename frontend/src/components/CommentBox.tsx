@@ -8,16 +8,27 @@ export default function CommentBox() {
   const [error, setError] = useState(""); // State to handle errors
 
   const handleSave = async () => {
+    const userId = localStorage.getItem("userId"); // Retrieve userId from localStorage
+
+    if (!userId) {
+      setError("User ID is missing. Please log in again.");
+      return;
+    }
+
     try {
+      const payload = {
+        user_id: userId,
+        annotation: comment,
+      };
+
+      console.log("Sending payload:", payload); // Log the payload for debugging
+
       const response = await fetch("https://localhost:5000/Scripture", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          user_id: localStorage.getItem("userId"), // Assuming userId is stored in localStorage
-          annotation: comment,
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
