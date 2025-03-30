@@ -2,41 +2,33 @@ using Microsoft.EntityFrameworkCore;
 
 namespace backend.Models;
 
-
 public class ScriptureDbContext : DbContext
 {
     public ScriptureDbContext(DbContextOptions<ScriptureDbContext> options) : base(options)
     {
-
     }
+
     public DbSet<User> Users { get; set; }
     public DbSet<Login> Logins { get; set; }
     public DbSet<Settings> Settings { get; set; }
-    public DbSet<Annotation> Annotations { get; set; }
-    
-   protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // Configure one-to-one relationship between User and Setting
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.Settings)
-                .WithOne(s => s.User)
-                .HasForeignKey<Settings>(s => s.user_id);
+    public DbSet<Comment> Comments { get; set; }
 
-            // Configure one-to-one relationship between User and Annotation
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.Annotation)
-                .WithOne(a => a.User)
-                .HasForeignKey<Annotation>(a => a.user_id);
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // Configure one-to-one relationship between User and Settings
+        modelBuilder.Entity<User>()
+            .HasOne(u => u.Settings)
+            .WithOne(s => s.User)
+            .HasForeignKey<Settings>(s => s.user_id);
 
-            // Ensure Annotation relationships are properly configured
-            modelBuilder.Entity<Annotation>()
-                .HasKey(a => a.annotation_id); // Ensure primary key is set
+        // Reconfigure one-to-many relationship between User and Comment
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.Comments)
+            .WithOne(c => c.User)
+            .HasForeignKey(c => c.user_id);
 
-            modelBuilder.Entity<Annotation>()
-                .HasOne(a => a.User)
-                .WithOne(u => u.Annotation)
-                .HasForeignKey<Annotation>(a => a.user_id)
-                .OnDelete(DeleteBehavior.Cascade); // Handle cascading deletes
-        }
-
+        // Configure Comment primary key
+        modelBuilder.Entity<Comment>()
+            .HasKey(c => c.comment_id);
+    }
 }
