@@ -17,10 +17,93 @@
   flex: 1;
   border: none;
   padding: 4px 8px;
-  font-family: Roboto, -apple-system, Helvetica, sans-serif;
+  font-family:
+    Roboto,
+    -apple-system,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   color: #49454f;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.5px; /* Search Container */
+  .searchContainer {
+    width: 100%;
+    padding: 10px 20px; /* Adjust the padding for spacing */
+  }
+
+  /* Search Bar (input and button) */
+  .searchBar {
+    background-color: #fff;
+    border: 1px solid #ccc; /* Light border for better contrast */
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure it spans the full width */
+    padding: 4px 12px; /* Space between input and button */
+    transition: box-shadow 0.3s ease; /* Smooth transition for focus state */
+  }
+
+  /* Search Input */
+  .searchInput {
+    flex: 1;
+    border: none;
+    padding: 8px 12px;
+    font-family:
+      Roboto,
+      -apple-system,
+      Helvetica,
+      sans-serif;
+    font-size: 16px;
+    color: #49454f;
+    letter-spacing: 0.5px;
+    outline: none;
+    background-color: transparent;
+    transition:
+      border 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  /* Focus State for Input */
+  .searchInput:focus {
+    border: 1px solid #5d8aa8; /* Border color on focus */
+    box-shadow: 0 0 4px rgba(93, 138, 168, 0.5); /* Soft glow effect */
+  }
+
+  /* Search Button */
+  .searchButton {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+
+  /* Button Hover Effect */
+  .searchButton:hover {
+    transform: scale(1.1); /* Slight zoom effect when hovering */
+  }
+
+  /* Search Icon */
+  .searchIconWrapper {
+    background-color: #5d8aa8;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+  }
+
+  .searchIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    fill: #fff; /* Ensure the icon is white */
+  }
+
   outline: none;
 }
 

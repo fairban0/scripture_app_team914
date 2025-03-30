@@ -4,6 +4,7 @@
   align-items: flex-start;
   width: 100%;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .content {
@@ -18,42 +19,71 @@
   object-position: center;
   border-radius: 50%;
   width: 56px;
+  margin: 10px;
 }
 
 .messageContent {
   display: flex;
   flex-direction: column;
   margin: auto 0;
+  position: relative; /* Ensure notification is positioned relative to this */
 }
 
 .name {
   color: #000;
-  font-family: Inclusive Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inclusive Sans,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 17px;
   font-weight: 400;
   -webkit-text-stroke: 0.25px #000;
+  display: inline-block; /* Allow notification to be positioned next to it */
+  padding-right: 24px; /* Add space for notification icon */
+  position: relative; /* Allow the notification to be placed relative to this */
+  margin-bottom: 8px;
+  margin-top: 0px;
 }
 
 .message {
   color: #000;
-  font-family: Inclusive Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inclusive Sans,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 12px;
   font-weight: 400;
+  margin: -5px;
 }
 
 .date {
   color: #000;
-  font-family: Inclusive Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inclusive Sans,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 12px;
   font-weight: 400;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
+/* Notification for new messages */
 .notification {
   position: absolute;
+  top: 0; /* Align with the top of the name */
+  right: 0; /* Position it to the right of the name */
   width: 20px;
   height: 20px;
   background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/a5de014e059eed4f58ec993b6ec61c0cbc38318c?placeholderIfAbsent=true&apiKey=3258114e603f4c4b93159cc5a3da17fc");
   background-size: contain;
-  top: 8px;
-  left: 149px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
 }

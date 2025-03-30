@@ -11,17 +11,18 @@ const RecentSearchItem: React.FC<RecentSearchItemProps> = ({
   onDelete = () => {},
 }) => {
   return (
-    <article className="flex gap-1.5 items-center w-full">
-      <ClockIcon />
-      <div className="flex-1 pl-4">
-        <p className="py-3 text-lg border-[0.333px] border-neutral-600 border-opacity-30 text-zinc-900">
-          {searchText}
-        </p>
-      </div>
+    <article className="recent-search-item">
+      {/* Left Icon */}
+      <ClockIcon className="recent-search-icon" />
+
+      {/* Search Text */}
+      <span className="recent-search-text">{searchText}</span>
+
+      {/* Right Icon (Delete) */}
       <button
         onClick={onDelete}
         aria-label={`Remove ${searchText} from recent searches`}
-        className="focus:outline-none"
+        className="recent-search-delete"
       >
         <XCircleIcon />
       </button>

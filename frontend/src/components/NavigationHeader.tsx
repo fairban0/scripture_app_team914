@@ -1,9 +1,10 @@
 import React from "react";
 import { BackIcon, MenuIcon } from "./icons";
+import "./global.css";
 
-function NavigationHeader(){
+function NavigationHeader() {
   return (
-    <nav className="flex justify-between items-center px-7 mt-5">
+    <nav className="navigation-header">
       <button aria-label="Go back" className="focus:outline-none">
         <BackIcon />
       </button>
@@ -12,6 +13,6 @@ function NavigationHeader(){
       </button>
     </nav>
   );
-};
+}
 
 export default NavigationHeader;

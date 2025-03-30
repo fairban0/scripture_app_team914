@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import  NavigationHeader  from "./NavigationHeader";
+import NavigationHeader from "./NavigationHeader";
 import { ScriptureContent } from "./ScriptureContent";
 import BottomNavigation from "./BottomNavigation";
 
@@ -21,11 +21,12 @@ const ScriptureReader = () => {
 
 const ScriptureContainer = styled.div`
   font-family: "EB Garamond", serif;
-  max-width: 600px;
+  width: 100%;
   margin: 0 auto;
   background-color: #ffffff;
   min-height: 100vh;
   position: relative;
+  margin-bottom: 100px;
 `;
 
 export default ScriptureReader;
