@@ -33,7 +33,12 @@
   color: #000;
   flex: auto;
   width: 220px;
-  font-family: Inclusive Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inclusive Sans,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 24px;
   font-weight: 400;
 }

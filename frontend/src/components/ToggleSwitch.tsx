@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Settings.module.css";
 
 const ToggleSwitch: React.FC = () => {
   const [enabled, setEnabled] = useState(false);

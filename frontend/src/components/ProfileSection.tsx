@@ -15,21 +15,21 @@ const ProfileSection: React.FC = () => {
   const goToSettings = () => navigate("/settings");
 
   return (
-    <section className="flex flex-col items-center w-full p-4">
-      {/* Profile Image (Keeping the original settings) */}
-      <div className="flex items-center">
+    <section className="profile-section">
+      {/* Profile Image */}
+      <div className="profile-image-container">
         <img
           src="/images/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg"
           alt="User profile"
-          className="profileImage"
+          className="profile-image"
         />
       </div>
 
-      {/* Buttons (Optimized for Mobile) */}
-      <div className="flex gap-4 mt-4">
+      {/* Buttons */}
+      <div className="button-container">
         <button
           onClick={handleLogoutClick}
-          className="p-2"
+          className="action-button"
           aria-label="Sign Out"
         >
           <svg
@@ -49,7 +49,11 @@ const ProfileSection: React.FC = () => {
           </svg>
         </button>
 
-        <button onClick={goToSettings} className="p-2" aria-label="Settings">
+        <button
+          onClick={goToSettings}
+          className="action-button"
+          aria-label="Settings"
+        >
           <svg
             width="38"
             height="38"
@@ -70,22 +74,17 @@ const ProfileSection: React.FC = () => {
 
       {/* Custom Modal for Logout Confirmation */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-sm text-center">
-            <h2 className="text-lg font-semibold mb-4 text-gray-800">
-              Are you sure you want to sign out?
-            </h2>
-            <div className="flex flex-col gap-3">
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2 className="modal-header">Are you sure you want to sign out?</h2>
+            <div className="modal-buttons">
               <button
-                className="bg-red-500 text-white py-2 rounded-lg text-lg"
+                className="modal-btn confirm"
                 onClick={handleLogoutConfirm}
               >
                 Yes, Sign Out
               </button>
-              <button
-                className="bg-gray-500 text-white py-2 rounded-lg text-lg"
-                onClick={handleLogoutCancel}
-              >
+              <button className="modal-btn cancel" onClick={handleLogoutCancel}>
                 Cancel
               </button>
             </div>

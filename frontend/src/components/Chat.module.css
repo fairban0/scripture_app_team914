@@ -91,7 +91,7 @@
 }
 
 .icons {
-  position: absolute;
+  position: relative;
   top: 30px;
   width: 100%;
 }
@@ -119,6 +119,7 @@
   object-fit: contain;
   border-radius: 50%;
   margin-right: 10px; /* Space between profile and name */
+  margin-top: 40px;
 }
 
 .andreaJohnson {
@@ -135,6 +136,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-top: 70px;
 }
 
 .headerContainer {
@@ -148,7 +150,7 @@
   color: #000;
   flex-direction: column;
   width: 100%;
-  margin-top: 21px;
+  margin-top: 0px;
   padding-left: 11px;
   padding-right: 11px;
   font-family:

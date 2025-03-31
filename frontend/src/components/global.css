@@ -43,6 +43,7 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 65px;
 }
 
 /* Navigation Item */
@@ -100,7 +101,7 @@ main {
 
 /* Title */
 .continueReadingTitle {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
   text-align: left;
@@ -192,60 +193,136 @@ main {
 /* 📌 Profile Section */
 /* ----------------------------------- */
 
-.profileSection {
-  position: relative;
+/* Profile Section */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align everything to the left */
+  width: 100%;
+  padding: 1rem;
+  position: relative; /* Allows positioning of buttons */
+}
+
+/* Profile Image Container */
+.profile-image-container {
+  position: absolute; /* Position the image in the top left corner */
+  top: 0px;
+  left: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  width: 100%;
+  justify-content: center;
+  border: 2px solid #5d8aa8; /* Thin border around the profile picture */
+  border-radius: 50%; /* Ensures the image stays circular */
+  padding: 2px; /* Gives a little space between the border and image */
 }
 
 /* Profile Image */
-.profileImage {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Ensures the image is circular */
   object-fit: cover;
-  border: 3px solid #475569;
+  position: relative;
 }
 
-/* Welcome Message */
-.welcomeMessage {
-  font-size: 40px;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-  margin-left: 15px;
-}
-
-/* Button Container */
-.profileButtons {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+/* Button Container (Optimized for Mobile) */
+.button-container {
   display: flex;
-  gap: 0px;
-  padding-right: 5px;
+
+  position: absolute; /* Position the buttons in the top right corner */
+  top: 5px;
+  right: 3rem;
 }
 
-/* Profile Buttons */
-.profileButton {
-  background: none;
+/* Action Buttons (Sign Out, Settings) */
+.action-button {
+  padding: 0.5rem;
+  background-color: transparent;
   border: none;
   cursor: pointer;
-  padding: 5px;
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.profileButton:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
+/* Icon Style */
+.action-button svg {
+  width: 38px;
+  height: 38px;
+  fill: none;
+  stroke: #5d8aa8;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-btn {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-btn.confirm {
+  background-color: #f56565;
+  color: white;
+}
+
+.modal-btn.confirm:hover {
+  background-color: #e53e3e;
+}
+
+.modal-btn.cancel {
+  background-color: #a0aec0;
+  color: white;
+}
+
+.modal-btn.cancel:hover {
+  background-color: #718096;
+}
+
+.welcomeMessage {
+  position: relative;
+  margin-top: 80px;
+  text-align: center;
+  font-size: 30px;
+}
 /* ----------------------------------- */
 /* 📌 Verse of the Day */
 /* ----------------------------------- */
@@ -253,17 +330,17 @@ main {
 .verseContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   padding: 20px;
-  margin-top: 20px;
+  padding-top: 0;
 }
 
 .verseTitle {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .verseCard {
@@ -283,12 +360,14 @@ main {
 
 .verseTextContainer {
   padding: 16px;
+  text-align: center;
 }
 
 .verseText {
   font-size: 16px;
   line-height: 1.6;
   color: #333;
+  text-align: center;
 }
 
 .verseReference {
@@ -305,6 +384,7 @@ main {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 20px;
+  align-self: center;
 }
 
 .shareButton svg path {
@@ -347,8 +427,9 @@ main {
   border-radius: 1.5rem;
   border: 1px solid black;
   min-height: 41px;
-  min-width: 360px;
   margin: 20px;
+  margin-top: 3px;
+  height: 10px;
 }
 
 /* Search Input Container */
@@ -357,7 +438,7 @@ main {
   flex: 1;
   gap: 0.5rem;
   padding: 0.25rem;
-  min-width: 60px;
+  align-items: center;
 }
 
 /* Input Field */
@@ -449,12 +530,16 @@ main {
   width: 20px;
   height: 20px;
   color: #6b7280;
+  top: 18px;
+  position: relative;
 }
 
 /* Search Text */
 .recent-search-text {
   flex: 1;
-  margin-left: 12px;
+  margin-left: 55px;
+  position: relative;
+  bottom: 10px;
   font-size: 16px;
   color: #111827;
   white-space: nowrap;
@@ -476,4 +561,8 @@ main {
 
 .recent-search-delete:hover {
   opacity: 0.6;
+}
+
+.Recent-Searches {
+  margin-left: 20px !important;
 }
