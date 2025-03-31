@@ -11,22 +11,22 @@ const RecentSearchItem: React.FC<RecentSearchItemProps> = ({
   onDelete = () => {},
 }) => {
   return (
-    <article className="flex items-center justify-between w-full p-3 border border-gray-300 rounded-lg bg-white shadow-sm">
+    <article className="recent-search-item">
       {/* Left side: Clock icon + search text */}
-      <div className="flex items-center gap-3 flex-1">
-        <div className="w-5 h-5 text-gray-500 flex items-center">
+      <div className="flex items-center flex-1">
+        <div className="recent-search-icon">
           <ClockIcon />
         </div>
-        <p className="text-lg text-gray-900 flex-1 truncate">{searchText}</p>
+        <p className="recent-search-text">{searchText}</p>
       </div>
 
       {/* Right side: Delete button with XCircle icon */}
       <button
         onClick={onDelete}
         aria-label={`Remove ${searchText} from recent searches`}
-        className="p-2 rounded-full hover:bg-gray-200 transition"
+        className="recent-search-delete"
       >
-        <div className="w-6 h-6 text-gray-500 hover:text-red-500 flex items-center">
+        <div>
           <XCircleIcon />
         </div>
       </button>

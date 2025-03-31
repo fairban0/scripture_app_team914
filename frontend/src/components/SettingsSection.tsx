@@ -1,3 +1,4 @@
+import styles from "./Settings.module.css";
 import React, { ReactNode } from "react";
 
 interface SettingsSectionProps {

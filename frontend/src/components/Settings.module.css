@@ -1,0 +1,256 @@
+/* Global styles for Settings page */
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header styling */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.navContainer {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.header {
+  font-size: 36px; /* Increased font size for "Settings" */
+  font-weight: 600;
+  color: #000000;
+  position: relative;
+  top: 30px;
+  right: 45px;
+}
+
+/* Button Styling (Back Button with Arrow) */
+.buttonBack {
+  background: none; /* No background color */
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Remove any extra padding */
+  position: relative;
+  top: -28px;
+  left: 15px;
+}
+
+.buttonBackIcon {
+  color: #007bff; /* Blue arrow icon */
+  font-size: 24px; /* Adjust the size of the arrow icon */
+}
+
+/* Profile Section */
+.accountSection {
+  display: flex;
+  gap: 15px;
+  background-color: #f0f4f8;
+  padding: 15px;
+  align-items: center;
+  width: 80%;
+}
+
+/* Profile Image */
+.profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 60%;
+  object-fit: cover;
+}
+
+/* Profile Info (name and button) */
+.profileInfo {
+  display: flex;
+  flex-direction: column; /* Stack name and button vertically */
+  align-items: flex-start; /* Align to the left */
+  gap: 8px; /* Space between the name and button */
+}
+
+.profileName {
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+}
+
+.editProfileButton {
+  background-color: #475569;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+  bottom: 15px;
+}
+
+.editProfileButton:hover {
+  background-color: #0056b3;
+}
+
+/* Settings.module.css or SettingsScreen.module.css */
+
+/* Advanced Section Styles */
+.advancedSection {
+  background-color: #f0f4f8 !important;
+  padding: 15px;
+  width: 80%;
+  margin-bottom: 2000px;
+}
+
+.settingWithToggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-right: 70px;
+}
+
+.settingsItem {
+  font-size: 14px;
+  height: 10px;
+}
+
+.settingsItem:last-of-type {
+  border-bottom: none;
+}
+
+.settingsItemButton:hover {
+  text-decoration: underline;
+}
+
+.settingsItemButton {
+  background: transparent !important; /* Ensures no background color */
+  border: none; /* Remove default button border */
+  color: #475569 !important; /* Set your text color to blue (or another color) */
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px; /* Add some padding for better button appearance */
+  border-radius: 4px; /* Optionally round the corners */
+  height: auto; /* Ensure the height is auto, adjust as needed */
+}
+
+.settingsItemButton:hover {
+  text-decoration: underline;
+  background-color: rgba(
+    0,
+    123,
+    255,
+    0.1
+  ); /* Light background color on hover */
+  color: #0056b3; /* Change text color on hover (optional) */
+}
+
+/* Add styles for text settings with toggle */
+.settingWithToggle p {
+  font-size: 14px;
+  color: #0056b3;
+}
+
+.toggleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the toggle itself */
+.toggleWrapper input[type="checkbox"] {
+  width: 34px;
+  height: 20px;
+  border-radius: 20px;
+  appearance: none;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggleWrapper input[type="checkbox"]:checked {
+  background-color: #007bff;
+}
+
+.toggleWrapper input[type="checkbox"]:checked::after {
+  left: 14px;
+}
+
+.toggleWrapper input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+}
+
+.bottom {
+  margin-bottom: 500px;
+}
+/* Box wrapper for inputs and buttons */
+.box {
+  background-color: #f0f4f8;
+  padding: 24px;
+  align-items: center;
+  width: 75%;
+  margin-left: 20px;
+  position: relative;
+  margin-bottom: 150px;
+
+  /* Center contents */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Color box around input fields */
+.inputField {
+  border: 2px solid #475569; /* Blue-gray border */
+  padding: 10px;
+  border-radius: 8px;
+  width: 85%;
+  box-sizing: border-box;
+  margin-bottom: 12px; /* Spacing between inputs */
+}
+
+/* Buttons styling */
+.saveButton,
+.cancelButton {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Save button style */
+.saveButton {
+  background-color: #475569;
+  color: white;
+  border: none;
+}
+
+/* Cancel button style */
+.cancelButton {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  margin-top: 10px;
+  border: 2px solid #475569;
+}
+
+/* Add more spacing between buttons */
+.mt-6 {
+  margin-top: 24px; /* More spacing between the buttons */
+}

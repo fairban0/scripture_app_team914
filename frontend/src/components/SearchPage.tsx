@@ -25,9 +25,7 @@ const SearchPage: React.FC = () => {
 
       {/* Recent Searches Section */}
       <section className="px-4 mt-6">
-        <h2 className="text-lg font-semibold text-gray-800 mb-3">
-          Recent Searches
-        </h2>
+        <h2 className="Recent-Searches">Recent Searches</h2>
         <div className="flex flex-col gap-3 bg-gray-100 p-4 rounded-lg shadow-sm">
           {recentSearches.length > 0 ? (
             recentSearches.map((search, index) => (
