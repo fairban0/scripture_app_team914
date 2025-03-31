@@ -7,9 +7,12 @@
   width: 100%;
   padding-bottom: 120px;
   flex-direction: column;
+  justify-content: center;
   overflow: hidden;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .status-bar {
@@ -99,7 +102,7 @@
     sans-serif;
   font-weight: 400;
   text-align: center;
-  margin-top: 107px;
+  margin-top: 90x;
 }
 
 .welcome-message h1 {
@@ -111,7 +114,7 @@
 
 .login-component {
   position: relative;
-  margin-top: 67px;
+  margin-top: 55px;
   width: 100%;
   max-width: 320px;
   padding: 22px 23px;
@@ -127,6 +130,8 @@
   padding: 24px;
   font-size: 16px;
   background-color: #ffffff;
+  max-width: 320px;
+  box-sizing: border-box;
 }
 
 .input-field {
@@ -163,6 +168,8 @@
   line-height: 1;
   font-size: 16px;
   transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Ensures padding doesn't increase width */
+  margin: 0; /* Remove unnecessary margins */
 }
 
 .input::placeholder {
@@ -212,7 +219,7 @@
   width: 100%;
   border-radius: 8px;
   border: 1px solid rgba(93, 138, 168, 1);
-  background-color: rgba(93, 138, 168, 1);
+  background-color: #5d8aa8;
   color: #f5f5f5;
   padding: 12px;
   font-family:
@@ -333,14 +340,26 @@
   }
 
   .welcome-message h1 {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .login-component {
     margin-top: 80px;
   }
+  .login-form {
+    padding: 16px;
+  }
 }
+/* Adjustments for smaller screens */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 0 16px; /* Adds side padding for better spacing */
+  }
 
+  .login-form {
+    padding: 20px; /* Slightly reduce padding on smaller screens */
+  }
+}
 /* Handle dark mode */
 @media (prefers-color-scheme: dark) {
   .login-form {

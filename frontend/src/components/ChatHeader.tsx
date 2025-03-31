@@ -30,16 +30,6 @@ export const ChatHeader = () => {
             onClick={handleMenuClick} // Adds the menu button functionality
           />
         </nav>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/723e127d8b450268965d98b3ab4798c763676977?placeholderIfAbsent=true&apiKey=3258114e603f4c4b93159cc5a3da17fc"
-          alt="Back"
-          className={styles.img3}
-        />
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a282eb1ee316183d4158467f49b9faada1840846?placeholderIfAbsent=true&apiKey=3258114e603f4c4b93159cc5a3da17fc"
-          alt="Menu"
-          className={styles.img4}
-        />
       </div>
       <div className={styles.div}>
         <div className={styles.headerContainer}>
